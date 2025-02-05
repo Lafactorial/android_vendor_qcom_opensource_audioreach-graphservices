@@ -1,4 +1,7 @@
 LOCAL_PATH := $(call my-dir)
+
+ifneq ($(QCPATH),)
+
 include $(CLEAR_VARS)
 
 LOCAL_MODULE := libar-gsl
@@ -61,3 +64,5 @@ LOCAL_CFLAGS += -Wno-unused-parameter
 LOCAL_CFLAGS += -Wno-unused-variable
 
 include $(BUILD_SHARED_LIBRARY)
+
+endif

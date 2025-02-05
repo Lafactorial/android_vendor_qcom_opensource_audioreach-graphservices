@@ -7,6 +7,8 @@ include $(CLEAR_VARS)
 
 acdb-def += -D_ANDROID_
 
+ifneq ($(QCPATH),)
+
 #----------------------------------------------------------------------------
 #             Make the Shared library (libar-acdb)
 #----------------------------------------------------------------------------
@@ -60,6 +62,8 @@ include $(BUILD_SHARED_LIBRARY)
 
 include $(CLEAR_VARS)
 
+endif
+
 #----------------------------------------------------------------------------
 #                 Common definitons
 #----------------------------------------------------------------------------
@@ -69,6 +73,8 @@ ats-def += -D_ANDROID_ -DAR_ATS_USE_CUTILS
 #----------------------------------------------------------------------------
 #             Make the Shared library (libats)
 #----------------------------------------------------------------------------
+
+ifneq ($(QCPATH),)
 
 #LOCAL_C_INCLUDES := $(MYLOCAL_PATH)/inc
 
@@ -151,6 +157,8 @@ LOCAL_EXPORT_C_INCLUDE_DIRS += $(LOCAL_PATH)/ats/mcs/common/api
 include $(BUILD_SHARED_LIBRARY)
 
 include $(CLEAR_VARS)
+
+endif
 
 #----------------------------------------------------------------------------
 #                 Common definitons

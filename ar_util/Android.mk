@@ -1,4 +1,7 @@
 LOCAL_PATH := $(call my-dir)
+
+ifneq ($(QCPATH),)
+
 include $(CLEAR_VARS)
 
 LOCAL_MODULE := liblx-ar_util
@@ -64,3 +67,5 @@ LOCAL_C_INCLUDES := $(LOCAL_PATH)/api \
                     $(LOCAL_PATH)/inc
 
 include $(BUILD_EXECUTABLE)
+
+endif
